@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./home.css";
 
 const Home = () => {
@@ -6,6 +6,19 @@ const Home = () => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [category, setCategory] = useState("");
+
+  useEffect(() => {
+    const savedNotes = localStorage.getItem("notes");
+    if (savedNotes) {
+      setNotes(JSON.parse(savedNotes));
+    }
+  }, []);
+
+  useEffect(() => {
+    if (notes.length > 0) {
+      localStorage.setItem("notes", JSON.stringify(notes));
+    }
+  }, [notes]);
 
   const addNote = () => {
     if (title.trim() && content.trim() && category.trim()) {
@@ -36,16 +49,15 @@ const Home = () => {
           className="input-field"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
-          placeholder="Enter the titte"
+          placeholder="Enter the title"
         />
         <textarea
           className="input-field"
           value={content}
           onChange={(e) => setContent(e.target.value)}
-          placeholder="Enter the category"
+          placeholder="Enter the content"
           rows="4"
         />
-
         <input
           type="text"
           className="input-field"
@@ -67,29 +79,6 @@ const Home = () => {
       >
         RESET FIELDS
       </button>
-      <div className="notes-list">
-        {notes.length === 0 ? (
-          <p className="no-notes">No notes available</p>
-        ) : (
-          notes.map((note, index) => (
-            <div className="note-item" key={index}>
-              <div>
-                <h3>{note.title}</h3>
-                <p>{note.content}</p>
-                <p>
-                  <strong>Category:</strong> {note.category}
-                </p>
-                <p>
-                  <em>Created on: {note.date}</em>
-                </p>
-              </div>
-              <button onClick={() => deleteNote(index)} className="delete-btn">
-                Delete
-              </button>
-            </div>
-          ))
-        )}
-      </div>
     </div>
   );
 };

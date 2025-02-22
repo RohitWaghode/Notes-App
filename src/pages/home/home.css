@@ -79,11 +79,6 @@ textarea.input-field {
   margin-top: 20px;
 }
 
-.no-notes {
-  text-align: center;
-  color: #888;
-}
-
 .note-item {
   display: flex;
   justify-content: space-between;
@@ -99,11 +94,6 @@ textarea.input-field {
   margin: 0;
   color: #333;
   font-size: 1.2rem;
-}
-
-.note-item p {
-  margin: 5px 0;
-  color: #555;
 }
 
 .note-item {

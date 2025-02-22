@@ -5,6 +5,7 @@ import Home from "./home/Home";
 import Login from "./login/Login";
 import Signup from "./signup/signup";
 import Navbar from "../components/navbar/Navbar";
+import AllNotes from "./allNotes/AllNotes";
 
 export const AllRoutes = () => {
   return (
@@ -15,6 +16,7 @@ export const AllRoutes = () => {
         <Route path="/login" element={<Login />}></Route>
         <Route path="/profile" element={<Profile />}></Route>
         <Route path="/signup" element={<Signup />}></Route>
+        <Route path="/allnotes" element={<AllNotes />}></Route>
       </Routes>
     </>
   );
