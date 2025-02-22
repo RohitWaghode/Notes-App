@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./AllNotes.css";
+import DeleteButton from "../../components/deleteButton/DeleteButton";
 
 const AllNotes = () => {
   const [notes, setNotes] = useState([]);
@@ -48,12 +49,7 @@ const AllNotes = () => {
                 >
                   EDIT
                 </button>
-                <button
-                  onClick={() => deleteNote(index)}
-                  className="delete-btn"
-                >
-                  DELETE
-                </button>
+                <DeleteButton onDelete={() => deleteNote(index)} />
               </div>
             </div>
           ))

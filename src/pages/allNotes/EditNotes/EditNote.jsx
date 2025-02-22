@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import DeleteButton from "../../../components/deleteButton/DeleteButton";
 import "./EditNote.css";
 
 const EditNote = () => {
@@ -20,6 +21,15 @@ const EditNote = () => {
     const savedNotes = JSON.parse(localStorage.getItem("notes")) || [];
     savedNotes[id] = note;
     localStorage.setItem("notes", JSON.stringify(savedNotes));
+    navigate("/");
+  };
+
+  const handleDelete = () => {
+    const savedNotes = JSON.parse(localStorage.getItem("notes")) || [];
+    const updatedNotes = savedNotes.filter(
+      (_, index) => index !== parseInt(id)
+    );
+    localStorage.setItem("notes", JSON.stringify(updatedNotes));
     navigate("/");
   };
 
@@ -53,9 +63,7 @@ const EditNote = () => {
         <button className="update-btn" onClick={handleUpdate}>
           UPDATE NOTE
         </button>
-        <button className="delete-btn" onClick={() => navigate("/")}>
-          DELETE NOTE
-        </button>
+        <DeleteButton onDelete={handleDelete} />
       </div>
 
       <p className="updated-info">
