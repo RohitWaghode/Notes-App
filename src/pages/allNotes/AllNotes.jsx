@@ -24,7 +24,7 @@ const AllNotes = () => {
   return (
     <div className="container">
       <button className="create-btn">
-        <Link to="/" className="create-link">
+        <Link to="/addNotes" className="create-link">
           CREATE NEW NOTE
         </Link>
       </button>
