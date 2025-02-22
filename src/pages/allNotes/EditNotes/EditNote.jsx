@@ -21,7 +21,7 @@ const EditNote = () => {
     const savedNotes = JSON.parse(localStorage.getItem("notes")) || [];
     savedNotes[id] = note;
     localStorage.setItem("notes", JSON.stringify(savedNotes));
-    navigate("/");
+    navigate("/allNotes");
   };
 
   const handleDelete = () => {
@@ -30,7 +30,7 @@ const EditNote = () => {
       (_, index) => index !== parseInt(id)
     );
     localStorage.setItem("notes", JSON.stringify(updatedNotes));
-    navigate("/");
+    navigate("/allNotes");
   };
 
   return (

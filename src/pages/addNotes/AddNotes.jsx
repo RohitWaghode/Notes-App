@@ -35,11 +35,6 @@ const AddNotes = () => {
     }
   };
 
-  const deleteNote = (index) => {
-    const updatedNotes = notes.filter((note, i) => i !== index);
-    setNotes(updatedNotes);
-  };
-
   return (
     <div className="app-container">
       <h1 className="app-title">Create a Note</h1>

@@ -19,7 +19,7 @@ const Signup = () => {
     } else {
       setErrorMessage("");
       alert("Signup Successful!");
-      navigate("/");
+      navigate("/allNotes");
     }
   };
 
@@ -62,7 +62,7 @@ const Signup = () => {
         <div className="login-link">
           <p>
             Already have an account?{" "}
-            <a href="/login" className="link">
+            <a href="/" className="link">
               Login here
             </a>
           </p>

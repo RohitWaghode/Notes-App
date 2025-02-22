@@ -29,10 +29,6 @@
   outline: none;
 }
 
-.input-field:focus {
-  border-color: #5b9bd5;
-}
-
 .login-btn {
   padding: 10px 20px;
   background-color: #5b9bd5;

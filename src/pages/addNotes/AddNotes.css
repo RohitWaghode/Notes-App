@@ -1,7 +1,4 @@
 * {
-  /* margin: 0;
-    padding: 0;
-    box-sizing: border-box; */
   font-family: Arial, sans-serif;
 }
 
@@ -40,11 +37,6 @@
 
 .input-field:focus {
   border-color: #5b9bd5;
-}
-
-textarea.input-field {
-  resize: vertical;
-  min-height: 100px;
 }
 
 .add-btn,
