@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./AllNotes.css";
 
 const AllNotes = () => {
   const [notes, setNotes] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const savedNotes = localStorage.getItem("notes");
@@ -40,7 +42,12 @@ const AllNotes = () => {
                 </p>
               </div>
               <div className="note-actions">
-                <button className="edit-btn">EDIT</button>
+                <button
+                  className="edit-btn"
+                  onClick={() => navigate(`/edit/${index}`)}
+                >
+                  EDIT
+                </button>
                 <button
                   onClick={() => deleteNote(index)}
                   className="delete-btn"

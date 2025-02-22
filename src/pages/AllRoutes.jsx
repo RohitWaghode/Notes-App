@@ -6,6 +6,7 @@ import Login from "./login/Login";
 import Signup from "./signup/signup";
 import Navbar from "../components/navbar/Navbar";
 import AllNotes from "./allNotes/AllNotes";
+import EditNote from "./allNotes/EditNotes/EditNote";
 
 export const AllRoutes = () => {
   return (
@@ -17,6 +18,7 @@ export const AllRoutes = () => {
         <Route path="/profile" element={<Profile />}></Route>
         <Route path="/signup" element={<Signup />}></Route>
         <Route path="/allnotes" element={<AllNotes />}></Route>
+        <Route path="/edit/:id" element={<EditNote />} />
       </Routes>
     </>
   );
